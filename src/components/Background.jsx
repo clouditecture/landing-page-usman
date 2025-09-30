@@ -14,10 +14,7 @@ const Background = () => {
     >
       {/* Gradient box - Responsive sizing */}
       <div
-        className="
-          absolute rounded-xl sm:rounded-2xl bg-gradient-to-br from-[var(--bg-from)] to-[var(--bg-to)]
-          shadow-[0_0_30px_rgba(3,150,255,0.15)] sm:shadow-[0_0_45px_rgba(3,150,255,0.2)] md:shadow-[0_0_60px_rgba(3,150,255,0.25)]
-        "
+        className=" absolute rounded-xl sm:rounded-2xl bg-gradient-to-br from-[var(--bg-from)] to-[var(--bg-to)] shadow-[0_0_30px_rgba(3,150,255,0.15)] sm:shadow-[0_0_45px_rgba(3,150,255,0.2)] md:shadow-[0_0_60px_rgba(3,150,255,0.25)] "
         style={{
           width: "min(98vw, 95vw, 1499px)",
           height: "min(85vh, 90vh, 875px)",

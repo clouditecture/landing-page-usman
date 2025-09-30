@@ -1,6 +1,6 @@
 import PricingCard from "./PricingCard"
 import { cn } from "../lib/cn"
-
+import { Link } from "react-router-dom"
 export default function PricingSection({ className, onLeftCta, onMiddleCta }) {
   return (
     <section
@@ -68,23 +68,36 @@ export default function PricingSection({ className, onLeftCta, onMiddleCta }) {
                 smarter, faster, and together.
               </p>
 
-              <button
-                type="button"
-                className="mt-5 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-4 py-2 text-sm font-semibold text-sky-600 hover:bg-sky-50"
-                aria-label="See pricing details"
-              >
-                <span>Pricing</span>
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" stroke="currentColor" strokeOpacity="0.25" strokeWidth="2" />
-                  <path
-                    d="M10 8l4 4-4 4"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+             <Link
+      to="/pricing"
+      aria-label="See pricing details"
+      className="mt-5 inline-flex items-center rounded-full border border-sky-400 bg-white pr-6 shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer"
+    >
+      {/* Left Circle with Arrow */}
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-sky-600 text-white">
+        <svg
+          className="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M10 8l4 4-4 4"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+
+      {/* Text */}
+      <span className="ml-3 text-lg font-semibold text-sky-600">
+        Pricing
+      </span>
+    </Link>
+  
+
             </div>
           </div>
         </div>
