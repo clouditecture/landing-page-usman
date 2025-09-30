@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "/BLOG-SEC/BLOG-SEC-01.png",
+    "title": "The Future of Architecture with AI",
+    "description": "Discover how AI is revolutionizing architecture, speeding up design processes, and unlocking creative possibilities.",
+    "link": "/blog/future-of-architecture-ai"
+  },
+  {
+    "id": 2,
+    "image": "/BLOG-SEC/BLOG-SEC-02.png",
+    "title": "Why Teams Need AI-Powered Dashboards",
+    "description": "Learn how modern design tools improve project efficiency and streamline architectural workflows.",
+    "link": "/blog/ai-powered-dashboards"
+  },
+  {
+    "id": 3,
+    "image": "/BLOG-SEC/BLOG-SEC-03.png",
+    "title": "Our Platform Joins Hands with Leading Architecture Firms",
+    "description": "See how AI is partnering with top firms to bring smarter AI-powered tools into real-world projects.",
+    "link": "/blog/platform-partnership"
+  }
+]
