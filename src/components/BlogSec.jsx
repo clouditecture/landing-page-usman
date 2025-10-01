@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from "react-router-dom";
+
 
 export default function BlogNewsSection() {
   const [blogsData, setBlogsData] = useState([]);
@@ -33,10 +35,12 @@ export default function BlogNewsSection() {
           </p>
 
           {/* Explore More Button */}
-          <button className="inline-flex items-center gap-2 px-6 py-3 border-2 border-blue-500 text-blue-500 font-medium rounded-full hover:bg-blue-50 transition-all duration-300">
-            <ArrowRight className="w-5 h-5" />
-            <span>Explore More</span>
-          </button>
+          <Link to="/blogs">
+  <button className="inline-flex items-center gap-2 px-6 py-3 border-2 border-blue-500 text-blue-500 font-medium rounded-full hover:bg-blue-50 transition-all duration-300">
+    <ArrowRight className="w-5 h-5" />
+    <span>Explore More</span>
+  </button>
+</Link>
         </div>
 
         {/* Blog Cards Grid */}

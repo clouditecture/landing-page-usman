@@ -19,5 +19,35 @@
     "title": "Our Platform Joins Hands with Leading Architecture Firms",
     "description": "See how AI is partnering with top firms to bring smarter AI-powered tools into real-world projects.",
     "link": "/blog/platform-partnership"
+  },
+
+   {
+    "id": 4,
+    "image": "/BLOG-SEC/BLOG-SEC-01.png",
+    "title": "Tech with A.I",
+    "description": "Discover how AI is revolutionizing architecture, speeding up design processes, and unlocking creative possibilities.",
+    "link": "/blog/future-of-architecture-ai"
+  },
+  {
+    "id": 5,
+    "image": "/BLOG-SEC/BLOG-SEC-02.png",
+    "title": "Storong Bonding with teammats",
+    "description": "Learn how modern design tools improve project efficiency and streamline architectural workflows.",
+    "link": "/blog/ai-powered-dashboards"
+  },
+  {
+    "id": 6,
+    "image": "/BLOG-SEC/BLOG-SEC-03.png",
+    "title": "Design not development Also ",
+    "description": "See how AI is partnering with top firms to bring smarter AI-powered tools into real-world projects.",
+    "link": "/blog/platform-partnership"
+  },
+
+  {
+    "id": 7,
+    "image": "/BLOG-SEC/BLOG-SEC-03.png",
+    "title": "A.I with Teach and Development",
+    "description": "See how AI is partnering with top firms to bring smarter AI-powered tools into real-world projects.",
+    "link": "/blog/platform-partnership"
   }
 ]

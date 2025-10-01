@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,12 +26,14 @@ const Navbar = () => {
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           {/* Contact Us */}
+          <Link to="/contact">
           <button className="flex items-center justify-center space-x-2 text-base text-[#041925] hover:text-[#2584FF] transition-colors duration-200 rounded-full hover:bg-gray-50 font-medium w-[164px] h-[51px]">
             <div className="w-[45px] h-[45px] bg-gradient-to-r from-[#2584FF] to-[#00B5DD] rounded-full flex items-center justify-center">
               <ArrowRight size={20} className="text-white" />
             </div>
             <span>Contact us</span>
           </button>
+          </Link>
 
           {/* Get Started */}
           <button className="flex items-center justify-center space-x-2 bg-white text-[#041925] rounded-full hover:bg-gray-50 transition-all duration-200 font-medium text-base w-[163px] h-[51px] border border-[#2584FF]">
