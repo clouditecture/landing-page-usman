@@ -1,52 +1,97 @@
-import React from "react";
+// import { motion } from "framer-motion";
+// import { ArrowRight } from "lucide-react";
 
-const HeroContent = ({
-  // you can still override these if needed
-  primaryButtonText = "Learn More",
-  onPrimaryClick = () => {},
-  className = ""
-}) => {
+// const HeroContent = ({ heading, subheading, primaryCTA }) => {
+//   return (
+//     <div className="relative z-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center -mt-28 sm:-mt-32 lg:-mt-40">
+//       {/* Heading */}
+//       <motion.h1
+//         className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 leading-snug"
+//         initial={{ opacity: 0, y: 30 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+//       >
+//         {heading}
+//       </motion.h1>
+
+//       {/* Subheading */}
+//       <motion.p
+//         className="text-sm sm:text-base md:text-lg text-white/90 mb-4 sm:mb-5 max-w-xl mx-auto leading-relaxed"
+//         initial={{ opacity: 0, y: 30 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+//       >
+//         {subheading}
+//       </motion.p>
+
+//       {/* Single CTA Button */}
+//       <motion.div
+//         className="flex items-center justify-center"
+//         initial={{ opacity: 0, y: 30 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+//       >
+//         <a
+//           href={primaryCTA.href}
+//           className="group relative inline-flex items-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3.5 bg-white text-blue-600 font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+//         >
+//           <span>{primaryCTA.text}</span>
+//           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+//         </a>
+//       </motion.div>
+//     </div>
+//   );
+// };
+
+// export default HeroContent;
+
+
+
+
+
+// src/components/HeroContent.jsx
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+const HeroContent = ({ heading, subheading, primaryCTA }) => {
   return (
-    <section
-      className={`relative z-10 min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 ${className}`}
-    >
-      <div className="text-center max-w-4xl mx-auto">
-        {/* Line 1 */}
-        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          AI Simplifies
-        </h1>
-        {/* Line 2 */}
-        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-1">
-          Architecture Design
-        </h2>
+    <div className="relative z-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center -mt-28 sm:-mt-32 lg:-mt-40">
+      {/* Heading */}
+      <motion.h1
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 leading-snug"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {heading}
+      </motion.h1>
 
-        {/* Small description */}
-        <p className="mt-3 max-w-2xl mx-auto text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">
-          Empower individuals and teams to create, manage and collaborate on
-          architecture projects with AI-driven tools.
-        </p>
+      {/* Subheading */}
+      <motion.p
+        className="text-sm sm:text-base md:text-lg text-white/90 mb-5 max-w-xl mx-auto leading-relaxed"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {subheading}
+      </motion.p>
 
-        {/* Single Button */}
-        <div className="mt-8 flex justify-center">
-          <button
-            onClick={onPrimaryClick}
-            className="
-              px-6 sm:px-8 py-3 sm:py-4
-              bg-white/10 hover:bg-white/20
-              text-white font-semibold
-              rounded-full
-              shadow-md hover:shadow-lg
-              transition-all duration-300
-              transform hover:scale-105 active:scale-95
-              min-w-[180px]
-              text-sm sm:text-base
-            "
-          >
-            {primaryButtonText}
-          </button>
-        </div>
-      </div>
-    </section>
+      {/* CTA Button */}
+      <motion.div
+        className="flex items-center justify-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <a
+          href={primaryCTA.href}
+          className="group relative inline-flex items-center gap-2 px-6 py-3 sm:px-7 sm:py-3.5 bg-white text-blue-600 font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+        >
+          <span>{primaryCTA.text}</span>
+          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+        </a>
+      </motion.div>
+    </div>
   );
 };
 

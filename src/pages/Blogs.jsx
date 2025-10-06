@@ -38,6 +38,9 @@ export default function Blog() {
         
         {/* Header Text - Positioned on top of background */}
         <div className="relative z-20 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div className="absolute inset-0 w-full h-full">
+    <Background showImages={false} />
+  </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-center">
             Blogs & News
           </h1>
@@ -120,3 +123,9 @@ export default function Blog() {
     </div>
   );
 }
+
+
+
+
+
+

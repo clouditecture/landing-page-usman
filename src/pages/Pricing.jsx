@@ -10,7 +10,7 @@ const Pricing = () => {
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Background should cover the full page height */}
-      <Background fullHeight />
+<Background fullHeight={true} showImages={false} />
 
       {/* Page Content */}
       <div className="relative z-10 flex flex-col min-h-screen">

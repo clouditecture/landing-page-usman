@@ -1,28 +1,78 @@
+// // src/components/HeroSection.jsx
+// import React from "react";
+// import Background from "./Background";
+// import HeroContent from "./HeroContent";
+// import HeroVisuals from "./HeroVisuals";
+
+// const HeroSection = ({
+//   heading = "AI Simplifies Architecture Design",
+//   subheading = "Empower individuals and teams to create, manage, and collaborate on architecture projects with AI-driven tools.",
+//   primaryCTA = { text: "Learn More", href: "#learn" },
+//   secondaryCTA = { text: "Contact us", href: "#contact" },
+//   showVisuals = true,
+//   gradientFrom = "#ABDCFF",
+//   gradientTo = "#0396FF",
+// }) => {
+//   return (
+//     <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
+//       {/* Fixed background */}
+//       <Background 
+//         fullHeight={false}
+//         showImages={true}
+//       />
+
+//       {/* Hero Content (Text + Buttons) */}
+//       <HeroContent
+//         heading={heading}
+//         subheading={subheading}
+//         primaryCTA={primaryCTA}
+//         secondaryCTA={secondaryCTA}
+//       />
+
+//       {/* Floating Visuals (Card Images) */}
+//       {showVisuals && <HeroVisuals />}
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
+
+
+
 // src/components/HeroSection.jsx
 import React from "react";
 import Background from "./Background";
-import Navbar from "./Navbar";
 import HeroContent from "./HeroContent";
-// import HeroContentImages from "./HeroContentImages";
+import HeroVisuals from "./HeroVisuals";
 
-const HeroSection = () => {
+const HeroSection = ({
+  heading = "AI Simplifies Architecture Design",
+  subheading =
+    "Empower individuals and teams to create, manage, and collaborate on architecture projects with AI-driven tools.",
+  primaryCTA = { text: "Learn More", href: "#learn" },
+  showVisuals = true,
+}) => {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* fixed background */}
-      <Background />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background with gradient, ambient orbs, and edge images */}
+      <Background fullHeight={false} showImages={true} />
 
-      {/* content above background */}
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar />
+      {/* Hero Text + CTA */}
+      <HeroContent
+        heading={heading}
+        subheading={subheading}
+        primaryCTA={primaryCTA}
+      />
 
-        {/* main hero area */}
-        <div className="flex-1 flex items-center justify-center">
-          <HeroContent />
-          {/* <HeroContentImages /> */}
-        </div>
-      </div>
+      {/* Floating Visuals (cards) */}
+      {showVisuals && <HeroVisuals />}
     </section>
   );
 };
 
 export default HeroSection;
+
+
+
+

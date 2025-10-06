@@ -9,11 +9,14 @@ export default function ContactUs() {
       <div className="relative h-[500px] md:h-[600px] overflow-visible">
         {/* Background wrapper with proper positioning */}
         <div className="absolute inset-0 w-full h-full">
-          <Background />
+<Background showImages={true} />
         </div>
         
         {/* Header Content - Positioned on top of background */}
         <div className="relative z-20 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 w-full h-full">
+    <Background showImages={false} />
+  </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-center">
             Get in Touch
           </h1>
@@ -32,4 +35,12 @@ export default function ContactUs() {
       <div className="h-64 md:h-80"></div>
     </div>
   );
-}
+}  
+
+
+
+
+
+
+
+
