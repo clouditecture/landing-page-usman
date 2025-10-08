@@ -3,7 +3,10 @@
 import { motion } from "framer-motion"
 
 export default function Background({ fullHeight = false, showImages = true }) {
-  const EDGE = "clamp(12px, 2.2vw, 28px)"
+  // Responsive edge spacing: keeps design balanced on mobile + perfect on desktop
+  const EDGE = typeof window !== "undefined" && window.innerWidth < 640 
+    ? "clamp(10px, 3vw, 18px)" // mobile
+    : "clamp(16px, 2.5vw, 28px)" // tablet + desktop
 
   return (
     <div aria-hidden="true" className={`absolute inset-0 -z-10 overflow-hidden ${fullHeight ? "min-h-screen" : ""}`}>
@@ -13,13 +16,13 @@ export default function Background({ fullHeight = false, showImages = true }) {
           className="absolute rounded-[1.25rem] md:rounded-[1.75rem] lg:rounded-[2rem] shadow-[0_0_50px_rgba(3,150,255,0.25)]"
           style={{
             top: EDGE,
-            left: EDGE,
-            right: EDGE,
-            // keep bottom slightly higher when not full-height to avoid touching footer area
+            left: "clamp(10px, 3.2vw, 24px)", // 👈 slightly less padding on left
+            right: "clamp(10px, 2vw, 20px)",  // 👈 slightly less padding on right
             bottom: fullHeight ? EDGE : `calc(${EDGE} + 4vh)`,
             background: "linear-gradient(135deg, rgba(171,220,255,1) 0%, rgba(3,150,255,1) 70%)",
           }}
         />
+
         {/* Subtle texture and inner highlight */}
         <div
           className="absolute pointer-events-none rounded-[1.25rem] md:rounded-[1.75rem] lg:rounded-[2rem]"
@@ -45,66 +48,59 @@ export default function Background({ fullHeight = false, showImages = true }) {
         <div className="hidden lg:block absolute left-4 bottom-[18%] w-8 h-64 rounded-full bg-white/30 backdrop-blur-sm border border-white/40" />
       )}
 
-      {/* Background floating pictures (xl and up only). They live inside a wrapper that
-          uses the same inset as the gradient so they never touch screen edges. */}
+      {/* Background floating pictures (xl and up only) - positioned relative to viewport edges */}
       {showImages && (
-        <div
-          className="hidden xl:block absolute pointer-events-none"
-          style={{
-            top: EDGE,
-            left: EDGE,
-            right: EDGE,
-            bottom: fullHeight ? EDGE : `calc(${EDGE} + 4vh)`,
-          }}
-          aria-hidden="true"
-        >
-          <div className="relative w-full h-full">
-            {/* Group 1: Left Top and Right Top */}
-            <motion.img
-              src="/HERO-PICTURES/Rectangle left-01.png"
-              alt=""
-              className="absolute top-24 left-[-10px] w-[clamp(260px,18vw,440px)] h-auto drop-shadow-2xl"
-              initial={{ x: "-150%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            />
-            <motion.img
-              src="/HERO-PICTURES/Rectangle right01.png"
-              alt=""
-              className="absolute top-20 right-[-10px] w-[clamp(300px,20vw,480px)] h-auto drop-shadow-2xl"
-              initial={{ x: "150%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            />
+        <div className="hidden xl:block absolute inset-0 pointer-events-none" aria-hidden="true">
+          {/* Group 1: Left Top and Right Top */}
+          <motion.img
+            src="/HERO-PICTURES/Rectangle left-01.png"
+            alt=""
+            className="absolute w-[clamp(260px,18vw,440px)] h-auto drop-shadow-2xl"
+            style={{ top: "120px", left: "0px" }}
+            initial={{ x: "-150%", opacity: 0 }}
+            animate={{ x: "0%", opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          />
+          <motion.img
+            src="/HERO-PICTURES/Rectangle right01.png"
+            alt=""
+            className="absolute w-[clamp(300px,20vw,480px)] h-auto drop-shadow-2xl"
+            style={{ top: "100px", right: "0px" }}
+            initial={{ x: "150%", opacity: 0 }}
+            animate={{ x: "0%", opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          />
 
-            {/* Group 2: Left Middle and Right Middle */}
-            <motion.img
-              src="/HERO-PICTURES/Rectangle left-02.png"
-              alt=""
-              className="absolute top-48 left-0 w-[clamp(280px,19vw,460px)] h-auto drop-shadow-2xl"
-              initial={{ x: "-150%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{ duration: 1.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            />
-            <motion.img
-              src="/HERO-PICTURES/Rectangle -right02.png"
-              alt=""
-              className="absolute top-48 right-[-10px] w-[clamp(320px,22vw,520px)] h-auto drop-shadow-2xl"
-              initial={{ x: "150%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{ duration: 1.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            />
+          {/* Group 2: Left Middle and Right Middle */}
+          <motion.img
+            src="/HERO-PICTURES/Rectangle left-02.png"
+            alt=""
+            className="absolute w-[clamp(280px,19vw,460px)] h-auto drop-shadow-2xl"
+            style={{ top: "240px", left: "0px" }}
+            initial={{ x: "-150%", opacity: 0 }}
+            animate={{ x: "0%", opacity: 1 }}
+            transition={{ duration: 1.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          />
+          <motion.img
+            src="/HERO-PICTURES/Rectangle -right02.png"
+            alt=""
+            className="absolute w-[clamp(320px,22vw,520px)] h-auto drop-shadow-2xl"
+            style={{ top: "240px", right: "0px" }}
+            initial={{ x: "150%", opacity: 0 }}
+            animate={{ x: "0%", opacity: 1 }}
+            transition={{ duration: 1.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          />
 
-            {/* Group 3: Right Bottom */}
-            <motion.img
-              src="/HERO-PICTURES/Rectangle right-03.png"
-              alt=""
-              className="absolute right-0 bottom-5 w-[clamp(300px,21vw,500px)] h-auto drop-shadow-2xl"
-              initial={{ x: "100%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{ duration: 1.7, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
-            />
-          </div>
+          {/* Group 3: Right Bottom */}
+          <motion.img
+            src="/HERO-PICTURES/Rectangle right-03.png"
+            alt=""
+            className="absolute w-[clamp(300px,21vw,500px)] h-auto drop-shadow-2xl"
+            style={{ right: "0px", bottom: "20px" }}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: "0%", opacity: 1 }}
+            transition={{ duration: 1.7, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
       )}
 
