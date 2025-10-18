@@ -30,17 +30,15 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section with Background */}
-      <div className="relative h-[400px] md:h-[500px] overflow-visible">
+      <div className="relative min-h-[600px] md:min-h-[700px] overflow-visible">
         {/* Background wrapper with proper positioning */}
-        <div className="absolute inset-0 w-full h-full">
-          <Background />
+        <div className="absolute inset-0 z-0">
+          <Background /> {/* Keep your original Background component with all its functionality */}
         </div>
         
         {/* Header Text - Positioned on top of background */}
-        <div className="relative z-20 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-            <div className="absolute inset-0 w-full h-full">
-    <Background showImages={false} />
-  </div>
+        <div className="relative z-20 h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 md:pt-32">
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-center">
             Blogs & News
           </h1>
@@ -123,9 +121,3 @@ export default function Blog() {
     </div>
   );
 }
-
-
-
-
-
-

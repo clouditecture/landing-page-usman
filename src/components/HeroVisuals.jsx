@@ -26,7 +26,7 @@ const HeroVisuals = () => {
             className="absolute"
             style={{ 
               width: SIZES.card1,
-              bottom: "21%",
+              bottom: "15%",
               left: "8%"
             }}
             initial={{ opacity: 0, scale: 0.9, y: 50 }}
@@ -47,7 +47,7 @@ const HeroVisuals = () => {
             className="absolute"
             style={{ 
               width: SIZES.card2,
-              bottom: "12%",
+              bottom: "8%",
               left: "30%"
             }}
             initial={{ opacity: 0, scale: 0.9, y: 50 }}
@@ -111,7 +111,7 @@ const HeroVisuals = () => {
             className="absolute"
             style={{ 
               width: SIZES.card5,
-              bottom: "8%",
+              bottom: "6%",
               right: "60%"
             }}
             initial={{ opacity: 0, scale: 0.9, y: 50 }}

@@ -65,7 +65,7 @@ export default function Background({ fullHeight = false, showImages = true }) {
             src="/HERO-PICTURES/Rectangle right01.png"
             alt=""
             className="absolute w-[clamp(300px,20vw,480px)] h-auto drop-shadow-2xl"
-            style={{ top: "100px", right: "0px" }}
+            style={{ top: "100px", right: "20px" }}
             initial={{ x: "150%", opacity: 0 }}
             animate={{ x: "0%", opacity: 1 }}
             transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -76,7 +76,7 @@ export default function Background({ fullHeight = false, showImages = true }) {
             src="/HERO-PICTURES/Rectangle left-02.png"
             alt=""
             className="absolute w-[clamp(280px,19vw,460px)] h-auto drop-shadow-2xl"
-            style={{ top: "240px", left: "0px" }}
+            style={{ top: "240px", left: "50px" }}
             initial={{ x: "-150%", opacity: 0 }}
             animate={{ x: "0%", opacity: 1 }}
             transition={{ duration: 1.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
@@ -85,7 +85,7 @@ export default function Background({ fullHeight = false, showImages = true }) {
             src="/HERO-PICTURES/Rectangle -right02.png"
             alt=""
             className="absolute w-[clamp(320px,22vw,520px)] h-auto drop-shadow-2xl"
-            style={{ top: "240px", right: "0px" }}
+            style={{ top: "240px", right: "50px" }}
             initial={{ x: "150%", opacity: 0 }}
             animate={{ x: "0%", opacity: 1 }}
             transition={{ duration: 1.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
@@ -95,8 +95,8 @@ export default function Background({ fullHeight = false, showImages = true }) {
           <motion.img
             src="/HERO-PICTURES/Rectangle right-03.png"
             alt=""
-            className="absolute w-[clamp(300px,21vw,500px)] h-auto drop-shadow-2xl"
-            style={{ right: "0px", bottom: "20px" }}
+            className="absolute w-[clamp(500px,21vw,500px)] h-auto drop-shadow-2xl"
+            style={{ right: "0px", bottom: "350px" }}
             initial={{ x: "100%", opacity: 0 }}
             animate={{ x: "0%", opacity: 1 }}
             transition={{ duration: 1.7, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}

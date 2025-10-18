@@ -42,22 +42,12 @@ const HowItWorks = () => {
                 <img
                   src="/WORKSECTIONIMG/WORK-SEC-01.png"
                   alt="Create Cloud Infrastructure Dashboard"
-                  className="w-full max-w-sm rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
+                  className="w-full max-w-2xl rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               {/* Text overlay on mobile */}
-              <div className="absolute inset-0 flex items-center justify-center lg:hidden px-6">
-                <div className="text-center text-white">
-                  <h3 className="text-2xl font-bold drop-shadow-md mb-3">
-                    Create Cloud Infrastructure
-                  </h3>
-                  <p className="text-sm sm:text-base max-w-md mx-auto bg-black/40 px-4 py-2 rounded-lg">
-                    Easily design and launch your secure infrastructure with our
-                    AI-powered dashboard tools.
-                  </p>
-                </div>
-              </div>
+             
             </div>
           </div>
 
